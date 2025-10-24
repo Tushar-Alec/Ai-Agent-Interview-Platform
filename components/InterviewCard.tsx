@@ -2,6 +2,8 @@ import React from "react";
 import dayjs from "dayjs";
 import Image from "next/image";
 import { getRandomInterviewCover } from "@/lib/utils";
+import { Button } from "./ui/button";
+import { Link } from "lucide-react";
 
 
 const InterviewCard = ({
@@ -31,6 +33,34 @@ const InterviewCard = ({
             height={90}
             className="rounded-full object-cover size-[90px]"
           />
+          <h3 className="mt-5 capitalize">
+            {role} Interview
+          </h3>
+
+          <div className="flex flex-row gap-5 mt-3">
+            <div className="flex flex-row gap-2">
+                <Image src="/calendar.svg" alt="calendar icon" width={22} height={22} />
+                <p className="text-sm text-light-300">{formattedDate}</p>
+            </div>
+
+            <div className="flex flex-row gap-2 items-center">
+              <Image src="/star.svg" alt="staricon" width={22} height={22} />
+              <p>{feedback?.totalScore || '---'}/100</p>
+            </div>
+          </div>
+
+          <p className="line-clamp-2 mt-5">
+             {feedback?.finalAssessment || 'You have not taken this interview yet.'}
+          </p>
+        </div>
+        <div className="flex flex-row justify-between">
+          <p>Tech Icons</p>
+          <Button className="btn-primary">
+            <a href={feedback ? `/interview/${interviewId}/feedback` 
+             : `/interview/${interviewId}`}>  
+              {feedback ? 'View Feedback' : 'Take Interview'}
+             </a>
+          </Button>
         </div>
       </div>
     </div>
