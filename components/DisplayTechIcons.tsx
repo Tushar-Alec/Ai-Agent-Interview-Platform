@@ -1,9 +1,10 @@
 import React from "react";
 
-const DisplayTechIcons = () => {
-    return
-     <div>DisplayTechIcons</div>;
-
+const DisplayTechIcons = ({ techStack }: TechIconProps) => {
+    return (
+     <div>{ techStack }</div>
+    
+    )
 };
 
 export default DisplayTechIcons; 

@@ -4,6 +4,7 @@ import Image from "next/image";
 import { getRandomInterviewCover } from "@/lib/utils";
 import { Button } from "./ui/button";
 import { Link } from "lucide-react";
+import DisplayTechIcons from "./DisplayTechIcons";
 
 
 const InterviewCard = ({
@@ -54,7 +55,10 @@ const InterviewCard = ({
           </p>
         </div>
         <div className="flex flex-row justify-between">
-          <p>Tech Icons</p>
+        
+          <DisplayTechIcons techStack ={techstack} />
+
+
           <Button className="btn-primary">
             <a href={feedback ? `/interview/${interviewId}/feedback` 
              : `/interview/${interviewId}`}>  
