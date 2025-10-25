@@ -79,9 +79,9 @@ const AuthForm = ({ type }: { type: FormType }) => {
                 router.push('/');
             }
         } catch (error) {
-            console.log(error);
-            toast.error('Something went wrong: ${error}');
-        }
+           console.log(error);
+           toast.error(`Something went wrong: ${error}`);
+}
     }
 
     const isSignIn = type === "sign-in";

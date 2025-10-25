@@ -22,7 +22,12 @@ export async function signup(params: SignUpParams) {
         await db.collection('users').doc(uid).set({
             name,
             email,
-        });
+        })
+        return {
+            success: true,
+            message: 'Account created successfully.'
+        };
+
 
     } catch (e: any) {
         console.error("Error creating user:", e);
