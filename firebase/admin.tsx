@@ -19,6 +19,6 @@ function initFirebaseAdmin() {
     auth: getAuth(),
     db: getFirestore(),
   };
-}
+}  
 
 export const { auth, db } = initFirebaseAdmin();
